@@ -1,11 +1,23 @@
 //this is root file of react project
 import { createRoot } from "react-dom/client";
-import { A } from "./A";
-import { B } from "./B";
+import { FormComp } from "./FormComp";
+
+const data = ["A", "B", "C", "D", "E", "F", "G", "H", "Z"]
 
 createRoot(document.getElementById("root")).render(
     <>
-        <A />
-        <B />
+        {/* dynamic Itreation  */}
+        {data.map((ele) => {
+            return <FormComp name={ele} key={ele} />
+        })}
+
+        {/* HardCoded  */}
+        <FormComp name={"TEST"} />
+        <FormComp name={"TEST245"} />
+        <FormComp name={"TEST"} />
+        <FormComp name={"TEST"} />
+        <FormComp name={"TEST"} />
+        <FormComp name={"4545"} />
+        <FormComp name={"TEST"} />
     </>
 )
